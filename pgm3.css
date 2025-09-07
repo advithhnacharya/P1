@@ -1,0 +1,13 @@
+body{background:lightgray}
+#box{background:lightblue;padding:15px;}
+h2{color:blue;text-align:center;}
+h3:hover{color:red;}
+hr{border:1px dashed black;}
+p[lang]{font-style:italic;}
+.highlight{background:yellow;}
+div p{color:green;}
+div > span{color:purple;}
+h2 tp{color:teal;}
+p::first-letter{font-size:20px;}
+img,a{border:1px solid black;}
+a:hover{color:orange;}
