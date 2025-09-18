@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Newspaper</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        header, footer {
+            background: yellow;
+            color: darkblue;
+            text-align: center;
+            padding: 10px;
+        }
+        section {
+            display: flex;
+            margin: 10px;
+        }
+        article {
+            flex: 3;
+            background: coral;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        aside {
+            flex: 1;
+            background: goldenrod;
+            padding: 10px;
+        }
+        figure {
+            padding: 5px;
+            text-align: center;
+        }
+        figcaption {
+            font-size: 14px;
+            color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: center;
+        }
+        th {
+            background: black;
+            color: white;
+        }
+        nav {
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Newspaper</h1>
+        <p>Stay updated with the latest news</p>
+    </header>
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">World</a> |
+        <a href="#">Sports</a> |
+        <a href="#">Entertainment</a>
+    </nav>
+    <section>
+        <article>
+            <h2>Main article</h2>
+            <p>This is inside an <b>article</b> element</p>
+            <figure>
+                <img src="news.jpg" width="100" height="100" alt="News">
+                <figcaption>News Image</figcaption>
+            </figure>
+            <h3>Statistics</h3>
+            <table>
+                <tr><th>Category</th><th>Count</th></tr>
+                <tr><td>Sports</td><td>15</td></tr>
+                <tr><td>Politics</td><td>8</td></tr>
+                <tr><td>Entertainment</td><td>12</td></tr>
+            </table>
+        </article>
+        <aside>
+            <h3>Side notes</h3>
+            <p>Weather<br>Ads<br>Trending</p>
+        </aside>
+    </section>
+    <footer>&copy; 2025 My Newspaper</footer>
+</body>
+</html>
