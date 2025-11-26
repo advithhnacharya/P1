@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Task</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f9f9f9;
+            margin: 20px
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .1)
+        }
+        
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            background: #007bff;
+            color: #fff;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button-hover {
+            background: #0056b3;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background: #f4b400;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>jQuery Demo</h2>
+        <p>Existing paragraph.</p>
+        <ul>
+            <li>First</li>
+            <li>Second</li>
+        </ul>
+        <button id="append">Append</button>
+        <button id="animate">Animate</button>
+        <button id="color">Change Color</button>
+        <div class="box"></div>
+    </div>
+    <script>
+        $(function() {
+
+            $("#append").click(() => {
+                $("p").append("Appended.");
+                $("ul").append("<li>First+Second</li>"), alert("Successfully appended")
+            });
+            $("#animate").click(() => {
+                $(".box").animate({
+                    width: "250px",
+                    height: "120px",
+                    left: "50px"
+                }, 1e3)
+            });
+            $("#color").click(() => {
+                $(".box").css("background", "#28a745")
+            });
+        });
+    </script>
+</body>
+
+</html>
