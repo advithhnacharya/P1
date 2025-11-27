@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f2f5f9;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background: #0078ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: #005dc1;
+        }
+        
+        p,
+        pre {
+            background: white;
+            width: 60%;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>a) JS AJAX</h2>
+    <button id="js">Load Text</button>
+    <p id="out1"></p>
+
+    <h2>b) jQuery AJAX</h2>
+    <button id="jq">Load Text</button>
+    <p id="out2"></p>
+
+    <h2>c) getJSON()</h2>
+    <button id="json">Load JSON</button>
+    <pre id="out3"></pre>
+
+    <h2>d) parseJSON()</h2>
+    <button id="parse">Parse JSON</button>
+    <pre id="out4"></pre>
+
+    <script>
+        // a) Plain JS AJAX
+        js.onclick = () => {
+            let x = new XMLHttpRequest();
+            x.onload = () => out1.textContent = x.responseText;
+            x.open("GET", "data.txt");
+            x.send();
+        };
+
+        // b) jQuery AJAX
+        $("#jq").click(() => $.get("data.txt", d => $("#out2").text(d)));
+
+        // c) getJSON()
+        $("#json").click(() => $.getJSON("data.json", d =>
+            $("#out3").text(JSON.stringify(d, null, 2))
+        ));
+
+        // d) parseJSON()
+        $("#parse").click(() => {
+            let d = $.parseJSON('{"name":"Jane","age":25}');
+            $("#out4").html(Name: $ {
+                d.name
+            } < br > Age: $ {
+                d.age
+            });
+        });
+    </script>
+</body>
+
+</html>
