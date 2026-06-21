@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.nonparametric.smoothers_lowess import lowess
+
+
+np.random.seed(42)
+x=np.linspace(0,2*np.pi,100)
+y=np.sin(x)+0.1*np.random.randn(100)
+
+
+lowess_result=lowess(y,x,frac=0.3)
+
+
+plt.figure(figsize=(10,6))
+plt.scatter(x,y,color='red',label='Training data',alpha=0.7)
+plt.plot(lowess_result[:,0],lowess_result[:,1],color='blue',label='LOWESS Fit',linewidth=2)
+plt.xlabel('x',fontsize=12)
+plt.ylabel('y',fontsize=12)
+plt.title('Locally weighted regression using statmodels',fontsize=14)
+plt.legend(fontsize=10)
+plt.grid(alpha=0.3)
+plt.show()
+
+
